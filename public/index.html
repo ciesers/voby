@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOOBYTHEDOG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Simple Contract Address Header -->
+    <div class="contract-header">
+        <span class="contract-text">Contract:</span>
+        <span class="address-value" id="contractAddress">2ahsyq36nyKbgNJzVSNhpTAFDHHZxEZnHEWCiGpHpump</span>
+        <button class="copy-btn" onclick="copyAddress()">Copy</button>
+    </div>
+
+    <!-- VOOBY Story in Corner -->
+    <div class="corner-story">
+        <div class="corner-story-content">
+            <h3 class="corner-title">VOOBY - The Banana Dog</h3>
+            <p class="corner-text">Meet VOOBY, the extraordinary banana dog! Born from the sweetest fruit and the bravest spirit, VOOBY is no ordinary pup. This delightful dachshund-shaped banana discovered a magical contract that transformed them into a dimension-hopping adventurer. With their long, yellow body and floppy ears, VOOBY brings sweetness and courage to every journey. Whether exploring blockchain realms or collecting friends across the multiverse, this banana dog never peels away from a challenge!</p>
+        </div>
+    </div>
+
+    <!-- Static Draggable Stickers -->
+    <div class="draggable-sticker" style="top: 150px; left: 50px;">
+        <img src="images/money.gif" alt="Money" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 200px; right: 100px;">
+        <img src="images/kool.gif" alt="Kool" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 300px; left: 80px;">
+        <img src="images/cheezit.gif" alt="Cheezit" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 400px; right: 150px;">
+        <img src="images/wakeup.gif" alt="Wake Up" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 500px; left: 120px;">
+        <img src="images/ratbutton1.png" alt="Rat" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 600px; right: 80px;">
+        <img src="images/3.png" alt="3" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 250px; left: 200px;">
+        <img src="images/void.png" alt="Void" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 450px; right: 200px;">
+        <img src="images/zizek.png" alt="Zizek" class="sticker-img" draggable="false">
+    </div>
+
+    <!-- Falling GIFs/Stickers -->
+    <div class="falling-stickers-container">
+        <div class="falling-sticker"><img src="images/flipphone.gif" alt="Flip Phone" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/iphone.gif" alt="iPhone" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/walkman.gif" alt="Walkman" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/sonywalk.gif" alt="Sony Walk" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/television.gif" alt="Television" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/canon mc.gif" alt="Canon" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/aesmoon.gif" alt="Aes Moon" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/planetaryinfluence.gif" alt="Planetary" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/sirpenski.gif" alt="Sierpinski" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/CYBHERSPACE.gif" alt="Cyberspace" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/money.gif" alt="Money" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/kool.gif" alt="Kool" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/cheezit.gif" alt="Cheezit" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/wakeup.gif" alt="Wake Up" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/siteindex.gif" alt="Site Index" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="images/Cyberzone_Webpage.gif" alt="Cyberzone" class="falling-gif"></div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="music/kawaii-techno.mp3" type="audio/mpeg">
+        <source src="music/kawaii-techno.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Bark Sound -->
+    <audio id="barkSound" preload="auto">
+        <source src="sounds/bark.mp3" type="audio/mpeg">
+        <source src="sounds/bark.ogg" type="audio/ogg">
+    </audio>
+    <div class="music-controls">
+        <button id="musicToggle" class="music-btn">🔊</button>
+    </div>
+
+    <div class="wrapper">
+        <div class="content">
+            <!-- Main Character: 3D Spinning Banana Dog in Center -->
+            <div class="main-character-section">
+                <div class="dog-container">
+                    <img src="images/banana.png" alt="VOOBY" class="spinning-dog-3d" id="spinningDog">
+                </div>
+            </div>
+
+            <!-- Main CTA Buttons -->
+            <div class="cta-buttons">
+                <a href="https://x.com/VOBYTHEDOG" target="_blank" class="cta-btn twitter-btn" id="twitterBtn">
+                    <span class="btn-text">Twitter</span>
+                </a>
+                <a href="https://pump.fun/coin/2ahsyq36nyKbgNJzVSNhpTAFDHHZxEZnHEWCiGpHpump" target="_blank" class="cta-btn pumpfun-btn" id="pumpfunBtn">
+                    <span class="btn-text">PumpFun</span>
+                </a>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="#home" class="nav-link" data-section="home"><img src="images/home.png" alt="Home" class="nav-btn"></a>
+                <a href="#about" class="nav-link" data-section="about"><img src="images/abtt.png" alt="About" class="nav-btn"></a>
+                <a href="#more" class="nav-link" data-section="more"><img src="images/more.png" alt="More" class="nav-btn"></a>
+            </div>
+
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <img src="images/welc.png" alt="Welcome" class="welcome-img">
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <!-- Home Section -->
+                <section id="home" class="content-section">
+                    <!-- Character Stories -->
+                    <div class="character-story" data-character="cio">
+                        <div class="story-header">
+                            <img src="images/cio.gif" alt="CIO" class="character-img floating">
+                            <h2 class="character-name">CIO</h2>
+                        </div>
+                        <div class="story-content">
+                            <p>VOOBY's tech wizard friend. Knows everything about blockchain and smart contracts, always ready with solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="character-story" data-character="sec">
+                        <div class="story-header">
+                            <img src="images/sec.gif" alt="SEC" class="character-img floating">
+                            <h2 class="character-name">SEC</h2>
+                        </div>
+                        <div class="story-content">
+                            <p>The protector of the VOOBY universe. Strong and vigilant, ensures everyone stays safe on their adventures.</p>
+                        </div>
+                    </div>
+
+                    <div class="character-story" data-character="la">
+                        <div class="story-header">
+                            <img src="images/LA.gif" alt="LA" class="character-img floating">
+                            <h2 class="character-name">LA</h2>
+                        </div>
+                        <div class="story-content">
+                            <p>The creative dreamer. Brings imagination and fresh perspectives to every challenge.</p>
+                        </div>
+                    </div>
+
+                    <div class="character-story" data-character="gak">
+                        <div class="story-header">
+                            <img src="images/gak.gif" alt="GAK" class="character-img floating">
+                            <h2 class="character-name">GAK</h2>
+                        </div>
+                        <div class="story-content">
+                            <p>The group's comedian. Always ready with a joke to lighten the mood and bring joy.</p>
+                        </div>
+                    </div>
+
+                    <div class="character-story" data-character="dl">
+                        <div class="story-header">
+                            <img src="images/dl.gif" alt="DL" class="character-img floating">
+                            <h2 class="character-name">DL</h2>
+                        </div>
+                        <div class="story-content">
+                            <p>The explorer who never says no to adventure. Loves discovering new places and collecting stories.</p>
+                        </div>
+                    </div>
+
+                    <div class="character-story" data-character="jk">
+                        <div class="story-header">
+                            <img src="images/jk.png" alt="JK" class="character-img floating">
+                            <h2 class="character-name">JK</h2>
+                        </div>
+                        <div class="story-content">
+                            <p>The mysterious one. Quiet but observant, always appearing exactly when needed.</p>
+                        </div>
+                    </div>
+
+                    <!-- New Adventures Section -->
+                    <div class="new-adventures">
+                        <img src="images/newbtn.gif" alt="New Adventures" class="new-btn pulse">
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="content-section hidden">
+                    <div class="section-content">
+                        <h2 class="section-title">About VOOBYTHEDOG</h2>
+                        <p class="subtle-text">VOOBY discovered a magical contract and now travels dimensions collecting friends and adventures. With a heart full of love and paws full of determination, VOOBY is always ready for the next big adventure!</p>
+                        <p class="subtle-text">Join the VOOBY universe and be part of something special. Each character brings unique qualities to the team, creating an amazing community of friends and adventurers.</p>
+                    </div>
+                </section>
+
+                <!-- More Section -->
+                <section id="more" class="content-section hidden">
+                    <div class="section-content">
+                        <h2 class="section-title">More</h2>
+                        <div class="more-links">
+                            <a href="https://x.com/VOBYTHEDOG" target="_blank" class="more-link">Twitter</a>
+                            <a href="https://pump.fun/coin/2ahsyq36nyKbgNJzVSNhpTAFDHHZxEZnHEWCiGpHpump" target="_blank" class="more-link">PumpFun</a>
+                            <a href="#" class="more-link">Discord</a>
+                            <a href="#" class="more-link">Telegram</a>
+                        </div>
+                        <p class="subtle-text">More links and resources coming soon!</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Canvas Background -->
+    <canvas id="interactiveCanvas"></canvas>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
