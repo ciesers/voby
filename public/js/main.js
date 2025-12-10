@@ -442,9 +442,104 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Custom GIF cursor functionality
+    const customCursor = document.getElementById('customCursor');
+    const cursorGif = document.getElementById('cursorGif');
+    let cursorIndex = 0;
+    const cursorGifs = [
+        'images/money.gif',
+        'images/kool.gif',
+        'images/cheezit.gif',
+        'images/wakeup.gif',
+        'images/flipphone.gif',
+        'images/iphone.gif',
+        'images/walkman.gif',
+        'images/television.gif'
+    ];
+
+    // Update cursor position
+    document.addEventListener('mousemove', function(e) {
+        if (customCursor) {
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
+        }
+    });
+
+    // Change cursor on click
+    document.addEventListener('click', function() {
+        cursorIndex = (cursorIndex + 1) % cursorGifs.length;
+        if (cursorGif) {
+            cursorGif.src = cursorGifs[cursorIndex];
+            // Add click animation
+            customCursor.style.transform = 'translate(-50%, -50%) scale(1.3)';
+            setTimeout(() => {
+                customCursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 200);
+        }
+    });
+
+    // Mystery descriptions for falling GIFs
+    const mysteryDescriptions = {
+        'flipphone.gif': 'A relic from the past, still flipping through dimensions',
+        'iphone.gif': 'The modern oracle, connecting VOOBY to all realms',
+        'walkman.gif': 'Music player of the multiverse, carrying VOOBY\'s playlist',
+        'sonywalk.gif': 'Retro tech that travels through time and space',
+        'television.gif': 'The window to other dimensions, showing VOOBY\'s adventures',
+        'canon mc.gif': 'Captures moments across the multiverse',
+        'aesmoon.gif': 'Lunar energy powers VOOBY\'s magical journeys',
+        'planetaryinfluence.gif': 'The planets guide VOOBY\'s path through dimensions',
+        'sirpenski.gif': 'Fractal patterns reveal hidden pathways',
+        'CYBHERSPACE.gif': 'Digital realm where VOOBY finds new friends',
+        'money.gif': 'The currency of adventure, collected on every journey',
+        'kool.gif': 'Cool vibes that follow VOOBY everywhere',
+        'cheezit.gif': 'Snack of champions, fueling VOOBY\'s courage',
+        'wakeup.gif': 'The call to adventure, awakening new possibilities',
+        'siteindex.gif': 'The map to all dimensions VOOBY has visited',
+        'Cyberzone_Webpage.gif': 'A portal to the cyber dimension'
+    };
+
+    // Click handler for falling GIFs
+    const fallingStickers = document.querySelectorAll('.falling-sticker');
+    fallingStickers.forEach(sticker => {
+        sticker.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Remove previous highlights
+            fallingStickers.forEach(s => {
+                s.classList.remove('highlighted');
+                const prevDesc = s.querySelector('.mystery-description');
+                if (prevDesc) prevDesc.remove();
+            });
+
+            // Add highlight to clicked sticker
+            this.classList.add('highlighted');
+
+            // Get GIF filename and description
+            const img = this.querySelector('img');
+            if (img) {
+                const filename = img.src.split('/').pop();
+                const description = mysteryDescriptions[filename] || 'A mysterious artifact from VOOBY\'s adventures';
+
+                // Create and show description
+                const desc = document.createElement('div');
+                desc.className = 'mystery-description';
+                desc.textContent = description;
+                this.appendChild(desc);
+
+                // Remove highlight after animation
+                setTimeout(() => {
+                    this.classList.remove('highlighted');
+                    desc.remove();
+                }, 3000);
+            }
+        });
+    });
+
     // Console message
     console.log('%c🐕 VOOBYTHEDOG 🐕', 'color: #ff1493; font-size: 20px; font-weight: bold;');
     console.log('%cJoin the adventure!', 'color: #ff69b4; font-size: 14px;');
     console.log('%cClick the dog to make it bark!', 'color: #ff1493; font-size: 12px;');
     console.log('%cDrag the stickers around!', 'color: #ff1493; font-size: 12px;');
+    console.log('%cClick anywhere to change cursor!', 'color: #ff1493; font-size: 12px;');
+    console.log('%cClick falling GIFs for mysterious descriptions!', 'color: #ff1493; font-size: 12px;');
 });
