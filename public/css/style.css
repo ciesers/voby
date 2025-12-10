@@ -201,7 +201,7 @@ body {
 /* Corner Story - VOOBY Text */
 .corner-story {
     position: fixed;
-    top: 60px;
+    top: 120px;
     right: 20px;
     z-index: 999;
     max-width: 280px;
@@ -604,6 +604,9 @@ body {
     box-shadow: 8px 8px 0 #ffb6c1;
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .twitter-embed-container .embed-title {
@@ -614,7 +617,9 @@ body {
 
 .twitter-tweet {
     margin: 0 auto !important;
-    max-width: 100% !important;
+    max-width: 500px !important;
+    transform: scale(0.85);
+    transform-origin: center;
 }
 
 /* Character Stories */
