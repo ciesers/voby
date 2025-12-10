@@ -487,6 +487,136 @@ body {
     box-shadow: 5px 5px 0 #ff69b4;
 }
 
+/* How to Buy VOOBY Section */
+.how-to-buy-section {
+    margin: 30px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #fffacd 0%, #ffe4e1 100%);
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 #ffb6c1;
+    border-radius: 10px;
+}
+
+.buy-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.buy-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    border: 3px solid #000;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.buy-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 0 #ff69b4;
+    background: #fff;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #ff1493;
+    color: #fff;
+    border: 3px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    flex-shrink: 0;
+    box-shadow: 3px 3px 0 #000;
+}
+
+.step-content h3 {
+    color: #ff1493;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.step-content p {
+    color: #333;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Trading Embeds */
+.trading-embeds {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.embed-container {
+    padding: 20px;
+    background: linear-gradient(135deg, #e6e6fa 0%, #f0f8ff 100%);
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 #9370db;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.embed-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 0 #8b008b;
+}
+
+.embed-title {
+    color: #8b008b;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 0 #e6e6fa;
+    font-weight: bold;
+}
+
+.jupiter-embed,
+.dex-embed {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.jupiter-embed iframe,
+.dex-embed iframe {
+    width: 100%;
+    border: none;
+    display: block;
+}
+
+/* Twitter Embed Container */
+.twitter-embed-container {
+    margin: 30px 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #fffacd 0%, #ffe4e1 100%);
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 #ffb6c1;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.twitter-embed-container .embed-title {
+    color: #ff1493;
+    text-shadow: 2px 2px 0 #ffb6c1;
+    margin-bottom: 20px;
+}
+
+.twitter-tweet {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+}
+
 /* Character Stories */
 .character-story {
     margin: 20px 0;
@@ -974,6 +1104,23 @@ a:hover {
 
     .falling-boxes-container.right-side .falling-box {
         right: 10px;
+    }
+
+    .trading-embeds {
+        grid-template-columns: 1fr;
+    }
+
+    .buy-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .embed-container {
+        padding: 15px;
+    }
+
+    .jupiter-embed iframe,
+    .dex-embed iframe {
+        height: 350px;
     }
 }
 
