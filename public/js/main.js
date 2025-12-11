@@ -446,15 +446,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const customCursor = document.getElementById('customCursor');
     const cursorGif = document.getElementById('cursorGif');
     let cursorIndex = 0;
+    // Detect path prefix by checking if any image uses "public/" prefix
+    const firstImage = document.querySelector('img');
+    const imagePathPrefix = firstImage && firstImage.src.includes('/public/') ? 'public/' : '';
+    
     const cursorGifs = [
-        'images/money.gif',
-        'images/kool.gif',
-        'images/cheezit.gif',
-        'images/wakeup.gif',
-        'images/flipphone.gif',
-        'images/iphone.gif',
-        'images/walkman.gif',
-        'images/television.gif'
+        imagePathPrefix + 'images/money.gif',
+        imagePathPrefix + 'images/kool.gif',
+        imagePathPrefix + 'images/cheezit.gif',
+        imagePathPrefix + 'images/wakeup.gif',
+        imagePathPrefix + 'images/flipphone.gif',
+        imagePathPrefix + 'images/iphone.gif',
+        imagePathPrefix + 'images/walkman.gif',
+        imagePathPrefix + 'images/television.gif'
     ];
 
     // Update cursor position
