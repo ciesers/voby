@@ -14,8 +14,9 @@ Then open http://localhost:3000
 ## 📦 Project Structure
 
 ```
-├── public/              # All website files
-│   ├── index.html      # Main page
+├── index.html          # Root entry point (for static hosting)
+├── public/             # All website files
+│   ├── index.html      # Main page (for Express server)
 │   ├── css/            # Stylesheets
 │   ├── js/             # JavaScript
 │   ├── images/         # Images and GIFs
@@ -25,6 +26,8 @@ Then open http://localhost:3000
 ├── package.json        # Dependencies
 └── vercel.json         # Vercel config
 ```
+
+**Note:** The root `index.html` is the main entry point for static hosting platforms (Vercel, Netlify, etc.), while `public/index.html` is used by the Express server. Both work seamlessly with automatic path detection.
 
 ## 🌐 Deployment
 

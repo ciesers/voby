@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOOBYTHEDOG</title>
+    <link rel="icon" type="image/png" href="public/images/banana.png">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <!-- VOOBY Title Header -->
+    <div class="vooby-title-header">
+        <h1 class="vooby-title">VOOBY - The Banana Dog</h1>
+    </div>
+
+    <!-- Simple Contract Address Header -->
+    <div class="contract-header">
+        <span class="contract-text">Contract:</span>
+        <span class="address-value" id="contractAddress">2ahsyq36nyKbgNJzVSNhpTAFDHHZxEZnHEWCiGpHpump</span>
+        <button class="copy-btn" onclick="copyAddress()">Copy</button>
+    </div>
+
+    <!-- VOOBY Story in Corner -->
+    <div class="corner-story">
+        <div class="corner-story-content">
+            <h3 class="corner-title">VOOBY - The Banana Dog</h3>
+            <p class="corner-text">Meet VOOBY, the extraordinary banana dog! Born from the sweetest fruit and the bravest spirit, VOOBY is no ordinary pup. This delightful dachshund-shaped banana discovered a magical contract that transformed them into a dimension-hopping adventurer. With their long, yellow body and floppy ears, VOOBY brings sweetness and courage to every journey. Whether exploring blockchain realms or collecting friends across the multiverse, this banana dog never peels away from a challenge!</p>
+        </div>
+    </div>
+
+    <!-- Static Draggable Stickers -->
+    <div class="draggable-sticker" style="top: 150px; left: 50px;">
+        <img src="public/images/money.gif" alt="Money" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 200px; right: 100px;">
+        <img src="public/images/kool.gif" alt="Kool" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 300px; left: 80px;">
+        <img src="public/images/cheezit.gif" alt="Cheezit" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 400px; right: 150px;">
+        <img src="public/images/wakeup.gif" alt="Wake Up" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 500px; left: 120px;">
+        <img src="public/images/ratbutton1.png" alt="Rat" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 600px; right: 80px;">
+        <img src="public/images/3.png" alt="3" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 250px; left: 200px;">
+        <img src="public/images/void.png" alt="Void" class="sticker-img" draggable="false">
+    </div>
+    <div class="draggable-sticker" style="top: 450px; right: 200px;">
+        <img src="public/images/zizek.png" alt="Zizek" class="sticker-img" draggable="false">
+    </div>
+
+    <!-- Falling GIFs/Stickers -->
+    <div class="falling-stickers-container">
+        <div class="falling-sticker"><img src="public/images/flipphone.gif" alt="Flip Phone" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/iphone.gif" alt="iPhone" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/walkman.gif" alt="Walkman" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/sonywalk.gif" alt="Sony Walk" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/television.gif" alt="Television" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/canon mc.gif" alt="Canon" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/aesmoon.gif" alt="Aes Moon" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/planetaryinfluence.gif" alt="Planetary" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/sirpenski.gif" alt="Sierpinski" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/CYBHERSPACE.gif" alt="Cyberspace" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/money.gif" alt="Money" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/kool.gif" alt="Kool" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/cheezit.gif" alt="Cheezit" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/wakeup.gif" alt="Wake Up" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/siteindex.gif" alt="Site Index" class="falling-gif"></div>
+        <div class="falling-sticker"><img src="public/images/Cyberzone_Webpage.gif" alt="Cyberzone" class="falling-gif"></div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="public/music/kawaii-techno.mp3" type="audio/mpeg">
+        <source src="public/music/kawaii-techno.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Bark Sound -->
+    <audio id="barkSound" preload="auto">
+        <source src="public/sounds/bark.mp3" type="audio/mpeg">
+        <source src="public/sounds/bark.ogg" type="audio/ogg">
+    </audio>
+    <div class="music-controls">
+        <button id="musicToggle" class="music-btn">🔊</button>
+    </div>
+
+    <div class="wrapper">
+        <div class="content">
+            <!-- Main Character: 3D Spinning Banana Dog in Center -->
+            <div class="main-character-section">
+                <div class="dog-container">
+                    <img src="public/images/banana.png" alt="VOOBY" class="spinning-dog-3d" id="spinningDog">
+                </div>
+            </div>
+
+            <!-- Main CTA Buttons -->
+            <div class="cta-buttons">
+                <a href="https://x.com/VOBYTHEDOG" target="_blank" class="cta-btn twitter-btn" id="twitterBtn">
+                    <span class="btn-text">Twitter</span>
+                </a>
+                <a href="https://pump.fun/coin/2ahsyq36nyKbgNJzVSNhpTAFDHHZxEZnHEWCiGpHpump" target="_blank" class="cta-btn pumpfun-btn" id="pumpfunBtn">
+                    <span class="btn-text">PumpFun</span>
+                </a>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="#home" class="nav-link" data-section="home"><img src="public/images/home.png" alt="Home" class="nav-btn"></a>
+                <a href="#about" class="nav-link" data-section="about"><img src="public/images/abtt.png" alt="About" class="nav-btn"></a>
+                <a href="#more" class="nav-link" data-section="more"><img src="public/images/more.png" alt="More" class="nav-btn"></a>
+            </div>
+
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <img src="public/images/welc.png" alt="Welcome" class="welcome-img">
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <!-- Home Section -->
+                <section id="home" class="content-section">
+                    <!-- How to Buy VOOBY Section -->
+                    <div class="how-to-buy-section">
+                        <h2 class="section-title">How to Buy VOOBY</h2>
+                        <div class="buy-steps">
+                            <div class="buy-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Get a Wallet</h3>
+                                    <p>Download Phantom, Solflare, or any Solana wallet</p>
+                                </div>
+                            </div>
+                            <div class="buy-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Get SOL</h3>
+                                    <p>Buy SOL on an exchange and send it to your wallet</p>
+                                </div>
+                            </div>
+                            <div class="buy-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Swap for VOOBY</h3>
+                                    <p>Use Jupiter or PumpFun below to swap SOL for VOOBY</p>
+                                </div>
+                            </div>
+                            <div class="buy-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Join the Adventure!</h3>
+                                    <p>You're now part of VOOBY's universe! 🐕</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DEX & Trading Embeds -->
+                    <div class="trading-embeds">
+                        <div class="embed-container">
+                            <h3 class="embed-title">Jupiter Swap</h3>
+                            <div class="jupiter-embed">
+                                <iframe 
+                                    src="https://jup.ag/swap?inputMint=So11111111111111111111111111111111111111112&outputMint=2ahsyq36nyKbgNJzVSNhpTAFDHHZxEZnHEWCiGpHpump"
+                                    width="100%"
+                                    height="400"
+                                    frameborder="0"
+                                    allowtransparency="true"
+                                    style="border-radius: 10px; border: 3px solid #000;">
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <div class="embed-container">
+                            <h3 class="embed-title">DexScreener Chart</h3>
+                            <div class="dex-embed">
+                                <iframe 
+                                    src="https://dexscreener.com/solana/2ahsyq36nyKbgNJzVSNhpTAFDHHZxEZnHEWCiGpHpump?embed=1&theme=dark&trades=0&info=0"
+                                    width="100%"
+                                    height="500"
+                                    frameborder="0"
+                                    style="border-radius: 10px; border: 3px solid #000;">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Twitter Embed -->
+                    <div class="twitter-embed-container">
+                        <h3 class="embed-title">Latest from VOOBY</h3>
+                        <blockquote class="twitter-tweet" data-theme="dark">
+                            <p lang="en" dir="ltr">imjust a dog dats also a banena <a href="https://t.co/KCZfULH5Qp">pic.twitter.com/KCZfULH5Qp</a></p>&mdash; VOBYTHEDOG (@VOBYTHEDOG) <a href="https://twitter.com/VOBYTHEDOG/status/1998884179891859721?ref_src=twsrc%5Etfw">December 10, 2025</a>
+                        </blockquote>
+                    </div>
+
+                    <!-- New Adventures Section -->
+                    <div class="new-adventures">
+                        <img src="public/images/newbtn.gif" alt="New Adventures" class="new-btn pulse">
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="content-section hidden">
+                    <div class="section-content">
+                        <h2 class="section-title">About VOOBYTHEDOG</h2>
+                        <p class="subtle-text">VOOBY discovered a magical contract and now travels dimensions collecting friends and adventures. With a heart full of love and paws full of determination, VOOBY is always ready for the next big adventure!</p>
+                        <p class="subtle-text">Join the VOOBY universe and be part of something special. Each character brings unique qualities to the team, creating an amazing community of friends and adventurers.</p>
+                    </div>
+                </section>
+
+                <!-- More Section -->
+                <section id="more" class="content-section hidden">
+                    <div class="section-content">
+                        <h2 class="section-title">More</h2>
+                        <div class="more-links">
+                            <a href="https://x.com/VOBYTHEDOG" target="_blank" class="more-link">Twitter</a>
+                            <a href="https://pump.fun/coin/2ahsyq36nyKbgNJzVSNhpTAFDHHZxEZnHEWCiGpHpump" target="_blank" class="more-link">PumpFun</a>
+                            <a href="#" class="more-link">Discord</a>
+                            <a href="#" class="more-link">Telegram</a>
+                        </div>
+                        <p class="subtle-text">More links and resources coming soon!</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Canvas Background -->
+    <canvas id="interactiveCanvas"></canvas>
+
+    <!-- Custom GIF Cursor -->
+    <div class="custom-cursor" id="customCursor">
+        <img src="public/images/money.gif" alt="Cursor" id="cursorGif">
+    </div>
+
+    <!-- Twitter Widget Script -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <script src="public/js/main.js"></script>
+</body>
+</html>
